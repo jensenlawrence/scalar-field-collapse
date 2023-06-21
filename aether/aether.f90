@@ -617,7 +617,7 @@ subroutine calccurv(n, curv, ar, k, q, rad, psi, p, dr, cvec)
         drar   = (ar(i+1) - ar(i-1))/(2.0*dr)
         drrad  = (rad(i+1) - rad(i-1))/(2.0*dr)
         drpsi  = (psi(i+1) - psi(i-1))/(2.0*dr)
-        drrrad = (rad(i+1) + rad(i-1) - 2.0*rad(i)) ! missing /dr**2 ?
+        drrrad = (rad(i+1) + rad(i-1) - 2.0*rad(i))/(dr*dr)
 
         y  = (p(i)*drpsi - (c13 + c2)*drk)/(1.0 - c13)
         r1 = -2.0*drrrad/rad(i)
